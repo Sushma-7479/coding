@@ -1,0 +1,14 @@
+class Solution:
+    def maximumMeetings(self,n,start,end):
+        main=[]
+        for i in range(n):
+            main.append([start[i],end[i]])
+        main.sort(key=lambda x:x[-1])
+        evencount=1
+        prev=main[0][1]
+        for i in range(1,n):
+            if(main[i][0]>prev):
+                evencount+=1
+                prev=main[i][1]
+        return evencount
+            
